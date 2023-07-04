@@ -83,7 +83,7 @@
                     PHP Hotel
                 </h1>
 
-                <table class="table table-dark table-striped table-hoverp-3 ">
+                <table class="table table-dark table-striped table-hover p-3 ">
                     <thead>
                         <tr>
                             <?php foreach (array_keys($hotels[0]) as $key) { ?>
