@@ -120,22 +120,26 @@
 
         <div class="row">
             <div class="col-12">
-                <form>
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="parking">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Show only hotels with available parking
-                    </label>
-                </div>
-                <div class="form-check mb-3">
-                    <input class="form-check-number" type="number" id="flexCheckDefault" name="vote">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Show only hotels with an higher vote than
-                    </label>
-                </div>
+                <form class="row px-5">
+
+                    <div class="form-check mb-3 col-6">
+                        <input class="form-check-number" type="number" id="flexCheckDefault" name="vote">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Show only hotels with an higher vote than
+                        </label>
+                    </div>
+
+                    <div class="form-check mb-3 col-6">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="parking">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Show only hotels with available parking
+                        </label>
+                    </div>
 
 
-                    <button type="submit" class="btn btn-primary">Filter</button>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                    </div>
                 </form>
             </div>
         </div>
