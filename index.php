@@ -1,5 +1,4 @@
 <?php
-
     $hotels = [
 
         [
@@ -40,7 +39,33 @@
 
     ];
 
+
+    if (!empty($_GET['parking']) && $_GET['parking'] == 'on'){
+            $filteredHotels = [];
+            foreach ($hotels as $hotel) {
+                if ($hotel['parking'] === true){
+                    $filteredHotels[] = $hotel;
+                }
+            }
+
+            $hotels = $filteredHotels;
+    }
+
+    if (!empty($_GET['vote']) && is_numeric($_GET['vote'])){
+        $filteredHotels = [];
+        foreach ($hotels as $hotel) {
+            if ($hotel['vote'] >= $_GET['vote']){
+                $filteredHotels[] = $hotel;
+            }
+        }
+
+        $hotels = $filteredHotels;
+}
+
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -92,6 +117,30 @@
                 </table>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="parking">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Show only hotels with available parking
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-number" type="number" id="flexCheckDefault" name="vote">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Show only hotels with an higher vote than
+                    </label>
+                </div>
+
+
+                    <button type="submit" class="btn btn-primary">Filter</button>
+                </form>
+            </div>
+        </div>
+
+
 
     </div>
 
