@@ -86,11 +86,11 @@
                 <table class="table table-dark table-striped table-hoverp-3 ">
                     <thead>
                         <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Description </th>
-                            <th scope="col">Parking</th>
-                            <th scope="col">Vote</th>
-                            <th scope="col">Distance to center</th>
+                            <?php foreach (array_keys($hotels[0]) as $key) { ?>
+                                <th scope="col">
+                                    <?php echo ucwords(str_replace('_', ' ', trim($key))) ?>
+                                </th>
+                            <?php } ?>
                         </tr>
                     </thead>
                     <tbody>
